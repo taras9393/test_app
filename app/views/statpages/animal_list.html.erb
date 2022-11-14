@@ -1,0 +1,15 @@
+<% provide(:ttl, "Animal list") %>
+<!DOCTYPE html>
+<html>
+
+<body>
+<h2>List of animals:</h2>
+<% @animals.each do |an| %>
+<h2><%= an.upcase %></h2>
+<% end %>
+
+
+<p><%= link_to "back to main", root_path %> </p>
+</body>
+
+</html>
