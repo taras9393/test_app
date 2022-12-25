@@ -160,14 +160,15 @@ duplicate_user = @user.dup
 assert_not duplicate_user.valid?
 end
 
-                             VALIDATES (models/user.rb)
-
+                             VALIDATES (models/user.rb) !!!!!!!!!!!!!!!
+before_save {self.nick = self.nick.downcase}
 validates :name, presence: true, length: { maximum: 50 }
 
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
 
-
+has_secure_password
+validates :password,  length: {minimum: 6}
 
 
 
@@ -179,7 +180,7 @@ ol = "#{el} and #{a}"
 puts ol
 end
 *****************************************************
-duplicate_usr = @usr.dup                                      DUP !!!!!!!!!!!!!!!1
+duplicate_usr = @usr.dup                                      DUP !!!!!!!!!!!!!!!
 **************************************************
 
 rails g migration adding_index_to_email
@@ -198,11 +199,11 @@ before_save {self.nick = self.nick.downcase}
 
  Миграция для добавления столбца password в таблицу users :
 
-rails g migrate add_password_to_user password:string
+rails g migrate add_password_to_user password_digest:string
 
 class AddPasswordToUser < ActiveRecord::Migration[5.2]
   def change
-    add_column :users, :password, :string
+    add_column :users, :password_digest, :string
   end
 end
 ***********
@@ -212,3 +213,35 @@ end
 Включение гема bcrypt в файл Gemfile
 
  gem bcrypt(в лапках) , 3.1.7 (в лапках)
+*************************************************
+                                       !! Очистить базу данных
+rails db:migrate:reset 
+**************************************************
+                                !!!   Форма регистрации !!!!!!!!!!!!!!!!!!!!!!!
+
+  <%= form_for(@us_new) do |f|%>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :nick, "Enter email" %>
+  <%= f.email_field :nick %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Confirm Password" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "Create account", class: "btn btn-primary" %>
+
+
+<% end %>
+**************
+   Kод на встроенном Ruby
+ <%= f.label :name %>
+ <%= f.text_field :name %>
+    производит разметку HTML:
+<label for="user_name">Name</label>
+<input id="user_name" name="user[name]" type="text" />
+******************************************************************
