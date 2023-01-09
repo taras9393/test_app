@@ -1,5 +1,5 @@
 <header class="navbar navbar-fixed-top navbar-inverse" >
-  <div class="container">
+<div class="container">
   <%= link_to "Simple App", root_path, id: "logo"%>
  <ul class="nav navbar-nav navbar-right">
 
@@ -7,7 +7,20 @@
    <li><%= link_to "Animal list", animals_path %></li>
    <li><%= link_to "Contacts", contacts_path %></li>
    <li><%= link_to "About", about_path %></li>
+
+   <% if logged_in? %>
    <li><%= link_to "All users", users_path %></li>
-</ul>
+
+   <li class = "dropdown"><a href = "#" class="dropdown-toggle" data-toggle="dropdown">Account<b class = "caret"></b></a></li>
+
+       <li><%= link_to "Profile", '#' %></li>
+       <li><%= link_to "Settings", '#' %></li>
+       <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+
+   <% else %>
+   <li><%= link_to "Log in", login_path %></li>
+    <% end %>
+
+ </ul>
 </div>
 </header>

@@ -215,7 +215,7 @@ end
  gem bcrypt(в лапках) , 3.1.7 (в лапках)
 *************************************************
                                        !! Очистить базу данных
-rails db:migrate:reset 
+rails db:migrate:reset
 **************************************************
                                 !!!   Форма регистрации !!!!!!!!!!!!!!!!!!!!!!!
 
@@ -244,4 +244,19 @@ rails db:migrate:reset
     производит разметку HTML:
 <label for="user_name">Name</label>
 <input id="user_name" name="user[name]" type="text" />
-******************************************************************
+***********************************************************************************
+
+a = "skdfj"
+b = a.tr('a-z', 'A-Z')
+puts(b)
+
+
+
+class String
+  def upcaser
+    self.tr("a-z", "A-Z")
+  end
+end
+
+a = "lplololol"
+puts(a.upcaser)

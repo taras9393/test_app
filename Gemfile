@@ -8,7 +8,7 @@ gem 'bootstrap-sass'
 gem 'rails', '~> 5.2.8'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+#gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -67,4 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'pg', '0.17.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'puma', '~> 3.11'
 end
