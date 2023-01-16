@@ -212,7 +212,7 @@ end
 
 Включение гема bcrypt в файл Gemfile
 
- gem bcrypt(в лапках) , 3.1.7 (в лапках)
+ gem "bcrypt" , "3.1.7"
 *************************************************
                                        !! Очистить базу данных
 rails db:migrate:reset
@@ -260,3 +260,12 @@ end
 
 a = "lplololol"
 puts(a.upcaser)
+****************************************************
+wine ~/.wine/drive_c/Games/EI/starter.exe
+
+LC_ALL="ru_RU.UTF-8" wine ~/.wine/drive_c/Games/EI/starter.exe
+
+***************************************************
+tarik@ukr.net
+qwerty
+*************************************************

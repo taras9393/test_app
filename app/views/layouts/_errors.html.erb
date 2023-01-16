@@ -1,0 +1,10 @@
+<% if @word.errors.count > 0 %>
+<div class = "alert alert-danger "> Your have <%= pluralize(@word.errors.count, "error") %><br>
+ <% @word.errors.full_messages.each do |msg| %>
+ <ul>
+ <li><%= msg %></li>
+ </ul>
+ <% end %>
+</div>
+
+<% end %>

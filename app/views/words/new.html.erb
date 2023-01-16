@@ -1,0 +1,19 @@
+<h1>Add your new word!!</h1>
+<% provide(:ttl, "New word") %>
+
+<div>
+
+  <%= form_for(@word) do |w| %>
+   <%= render "layouts/errors" %>
+
+   <%= w.label :eng_word, "Your English word?"%>
+   <%= w.text_field :eng_word, class: "form-control" %>
+
+   <%= w.label :ua_word, "Ukr Translate?"%>
+   <%= w.text_field :ua_word, class: "form-control" %>
+
+   <%= w.submit "Add new word", class: "btn btn-primary" %>
+
+  <% end %>
+
+</div>

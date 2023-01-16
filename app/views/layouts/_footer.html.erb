@@ -5,10 +5,13 @@ by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
 </small>
 <nav>
 <ul>
-<li><%= link_to "About", about_path %></li>
-<li><%= link_to "Contact", contacts_path %></li>
-<li><a href="http://news.railstutorial.org/">News</a></li>
-<li><%= link_to "LOGIN", login_path%></li>
+  <% if logged_in? %>
+ <li><%= link_to "VOCABULARY", words_path %></li>
+  <% end %>
+ <li><%= link_to "About", about_path %></li>
+ <li><%= link_to "Contact", contacts_path %></li>
+ <li><a href="http://news.railstutorial.org/">News</a></li>
+ <li><%= link_to "LOGIN", login_path%></li>
 </ul>
 </nav>
 <p class = "my_time"> <%= Time.now %></p>

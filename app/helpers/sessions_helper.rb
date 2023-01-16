@@ -3,12 +3,12 @@ module SessionsHelper
 # Осуществляет вход данного пользователя
 
   def logg_in(huuser)
-   session[:user_id] = huuser.id
+   session[:chuvak] = huuser.id
   end
 
 # Возвращает текущего вошедшего пользователя (если есть)
  def current_user
-   User.find_by(id: session[:user_id])
+   User.find_by(id: session[:chuvak])
  end
 
  def logged_in?
@@ -20,7 +20,7 @@ module SessionsHelper
  end
 
  def log_out
-  session.delete(:user_id)
+  session.delete(:chuvak)
  end
 
 end
