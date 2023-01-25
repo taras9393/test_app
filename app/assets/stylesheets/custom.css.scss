@@ -163,3 +163,21 @@ padding: 30px;
 color: black;
 
 }
+
+.users {
+list-style: none;
+margin: 0;
+li {
+overflow: auto;
+padding: 10px 0;
+border-bottom: 1px solid green;
+ }
+ li a {color: blue;
+       font-size: 30px;  }
+  li a:hover { color: green; }
+}
+
+.deleting_user {
+color: green;
+font-size: 15px;
+}

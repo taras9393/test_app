@@ -1,0 +1,15 @@
+<h1>Update your word</h1>
+<%= provide(:ttl, "Edit word") %>
+
+
+<%= form_for(@word) do |f| %>
+  <%= render "shared/words_errors" %>
+  <%= f.label :eng_word, "Update English word" %>
+  <%= f.text_field :eng_word, class: "form-control" %>
+
+  <%= f.label :ua_word, "Update Ukr Word" %>
+  <%= f.text_field :ua_word, class: "form-control" %>
+
+  <%= f.submit "Update Word!", class: "btn btn-primary" %>
+
+<% end %>

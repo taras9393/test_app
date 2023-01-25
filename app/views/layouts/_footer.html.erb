@@ -11,7 +11,11 @@ by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
  <li><%= link_to "About", about_path %></li>
  <li><%= link_to "Contact", contacts_path %></li>
  <li><a href="http://news.railstutorial.org/">News</a></li>
+ <% if !logged_in? %>
  <li><%= link_to "LOGIN", login_path%></li>
+ <% else %>
+ <li><%= link_to "LOGOUT", logout_path, method: :delete %></li>
+ <% end %>
 </ul>
 </nav>
 <p class = "my_time"> <%= Time.now %></p>

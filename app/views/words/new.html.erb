@@ -3,7 +3,7 @@
 
 <div>
 
-  <%= form_for(@word) do |w| %>
+  <%= form_for(:word, url: words_path)  do |w| %>
    <%= render "layouts/errors" %>
 
    <%= w.label :eng_word, "Your English word?"%>

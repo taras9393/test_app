@@ -23,4 +23,8 @@ module SessionsHelper
   session.delete(:chuvak)
  end
 
+ def current_user?(arbuser)
+  arbuser == current_user
+ end
+
 end

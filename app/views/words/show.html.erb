@@ -1,2 +1,5 @@
 <% provide(:ttl, @word.eng_word)%>
 <h1> <%= "#{@word.eng_word} -- #{@word.ua_word}" %> </h1>
+
+<%= link_to "Edit this word", edit_word_path(@word), title: "Editttttt" %><br>
+<%= link_to "Delete this word", word_path(@word), method: :delete %>

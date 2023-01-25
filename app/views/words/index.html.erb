@@ -1,7 +1,7 @@
 <% provide(:ttl, "All words") %>
 <% @word.sort { |a ,b| a.eng_word.first <=> b.eng_word.first }.each do |w| %>
 <ul>
-<li><%= link_to "#{w.eng_word} -- #{w.ua_word}", word_path(w.id) %></li>
+ <li><%= link_to "#{w.eng_word} -- #{w.ua_word}", word_path(w.id) %></li>
 </ul>
 <% end %>
 

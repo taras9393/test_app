@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  
   root 'statpages#home'
   get 'home' => 'statpages#home'
   get 'about' => 'statpages#about'
@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   resources :words
-  
+
 end

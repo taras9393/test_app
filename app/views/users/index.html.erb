@@ -1,3 +1,19 @@
-<% @us_all.each do |el| %>
-<%= "#{el.nick.inspect} - user number #{el.id}" %></br>
+<h1> All users </h1>
+<%= provide(:ttl, "All users") %>
+
+<%= will_paginate %>
+<% @users.each do |el| %>
+ <ul class = "users">
+
+  <li>
+    <%= gravatar_for el %>
+    <%= link_to "#{el.name}", user_path(el.id) %>
+    <% if current_user.admin? %>
+     |  
+    <%= link_to "delete user", user_path(el.id), method: :delete, class: "deleting_user", data: {confirm: "Are you sure?"}  %>
+    <% end %>
+  </li>
+
+ </ul>
 <% end %>
+<%= will_paginate %>
